@@ -2,7 +2,10 @@
 <div class="row">
     {% for image in item.images %}
     <div class="col-md-4">
-        <a href="{{ image.view }}" title="{{ image.caption }}"><img src="{{ image.thumb }}" alt="{{ image.title }}"><span class="image-caption">{{ image.title }}</span></a>
+        <a href="{{ image.view }}" title="{{ image.caption }}">
+            <img src="{{ image.thumb }}" alt="{{ image.title }}">
+        </a>
+        <span class="image-caption">{{ image.title }}</span>
     </div>
     {% endfor %}
 </div>
