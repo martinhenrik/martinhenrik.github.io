@@ -1,5 +1,6 @@
 ---
 year: 2004
+selected: true
 images:
     - title: eyelight-mirror
       thumb: http://martinhenrik.com/images/szemfenytukor01.jpg

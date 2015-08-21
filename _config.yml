@@ -1,7 +1,4 @@
 ga_code: UA-xxx-xxx
 
 collections:
-    works:
-        output: true
-        permalink: /works/:path/
-
+    - works

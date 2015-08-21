@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<section class="content">
-  <p>
-  HEY
-  </p> 
-</section>
+{% assign items = site.works | where: 'selected', true %}
+
+{% include imagegrid.html %}
