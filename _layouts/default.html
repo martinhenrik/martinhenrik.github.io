@@ -27,7 +27,18 @@
                             <li><a target="_blank" href="/downloads/henrik_martin_2012.pdf">portfolio</a></li>
                         </ul>
                     </li>
-                    <li><a href="/works/">works</a></li>
+                    <li><a href="/works/">works</a>
+                        <ul>
+                            {% assign prev_year = 0 %}
+                            {% assign years = site.works | map: 'year' | sort %}
+                            {% for year in years %}
+                                {% if prev_year != year %}
+                                <li><a href="/works/{{ year }}">{{ year }}</a></li>
+                                {% assign prev_year = year %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
                     <li><a href="/actual">actual</a></li>
                     <li><a href="/cv">cv</a></li>
                     <li><a href="/texts">texts</a></li>
