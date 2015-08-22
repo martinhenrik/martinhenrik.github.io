@@ -2,3 +2,6 @@ ga_code: UA-xxx-xxx
 
 collections:
     - works
+
+gems:
+    - jekyll-redirect-from
