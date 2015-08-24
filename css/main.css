@@ -11,7 +11,9 @@
    ========================================================================== */
 
 html {
-    color: #222;
+    background-color: white;
+    font-family: "Courier New";
+    color: #999;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -310,12 +312,25 @@ body:after {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+a {
+  color: #999;
+  text-decoration: none;
+}
+a:hover, strong {
+  color: #333;,
+}
 
-
-
-
-
-
+nav ul li {
+  display: inline;
+  list-style: none;
+}
+nav ul li ul {
+  position: absolute;
+  display: none;  
+}
+nav ul li:hover ul {
+  display: block;
+}
 
 
 
