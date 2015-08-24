@@ -20,3 +20,30 @@ defaults:
     values:
       layout: default
       lang: hu
+
+trans:
+  en:
+    nav:
+      home: henrik martin
+      selected: selected
+      cv: cv
+      portfolio: portfolio
+      works: works
+      actual: actual
+      texts: texts
+      contact: contact
+      links: links
+  hu:
+    nav:
+      home: martin henrik
+      selected: válogatás
+      cv: cv
+      portfolio: portfólió
+      works: művek
+      actual: aktuális
+      texts: írások
+      contact: kapcsolat
+      links: linkek
+
+    
+

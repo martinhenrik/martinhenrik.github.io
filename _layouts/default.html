@@ -18,48 +18,7 @@
         <![endif]-->
 
         <div id="main">
-            <nav>
-                <ul>
-                    {% for lang in site.languages %}
-                    <li>
-                        {% if page.lang == lang %}
-                        <strong>[{{lang}}]</strong>
-                        {% else %}
-                        <a rel="alternate" href="{{ page.url | replace_first: page.lang, lang | replace: 'index.html', '' }}" hreflang="{{ lang }}" lang="{{ lang }}">[{{ lang }}]</a>
-                        {% endif %}
-                    </li>
-                    {% endfor %}
-                </ul>
-            </nav>
-
-            <nav role="navigation">
-                <ul>
-                    <li><a href="/">henrik martin</a>
-                        <ul>
-                            <li><a href="/">selected</li>
-                            <li><a target="_blank" href="/downloads/cv_henrik_martin2012.doc">cv</a></li>
-                            <li><a target="_blank" href="/downloads/henrik_martin_2012.pdf">portfolio</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/{{ page.lang }}/works/">works</a>
-                        <ul>
-                            {% assign prev_year = 0 %}
-                            {% assign years = site.works | map: 'year' | sort %}
-                            {% for year in years %}
-                                {% if prev_year != year %}
-                                <li><a href="/{{ page.lang }}/works/{{ year }}">{{ year }}</a></li>
-                                {% assign prev_year = year %}
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    <li><a href="/{{ page.lang }}/actual">actual</a></li>
-                    <li><a href="/{{ page.lang }}/cv">cv</a></li>
-                    <li><a href="/{{ page.lang }}/texts">texts</a></li>
-                    <li><a href="/{{ page.lang }}/contact">contact</a></li>
-                    <li><a href="/{{ page.lang }}/links">links</a></li>
-                </ul>
-            </nav>
+            {% include navigation.html %}
 
             <div class="container">
                 {{ content }}
