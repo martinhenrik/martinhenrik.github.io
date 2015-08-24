@@ -10,7 +10,13 @@ gems:
 
 defaults:
   - scope:
-      path: ''
+      path: 'en'
     values:
       layout: default
       lang: en
+
+  - scope:
+      path: 'hu'
+    values:
+      layout: default
+      lang: hu
