@@ -1,12 +1,12 @@
 {% for item in items %}
 <article>
-    {% if item.date and item.title %}
+    {% if item.date and item.title[page.lang] %}
     <header>
-        <time datetime="{{ item.date }}">{{ item.date | date: "%d/%m/%Y" }}</time> - {{ item.title }}
+        <time datetime="{{ item.date }}">{{ item.date | date: "%d/%m/%Y" }}</time> - {{ item.title[page.lang] }}
     </header>
     {% endif %}
 
-    {{ content }}
+    {{ page.content[page.lang] }}
 
     {% for image in item.images %}
     <div class="image">
