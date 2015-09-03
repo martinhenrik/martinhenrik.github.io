@@ -316,21 +316,30 @@ a {
   color: #999;
   text-decoration: none;
 }
-a:hover, strong {
+a:hover {
   color: #333;,
 }
-
-nav ul li {
+nav li {
   display: inline;
   list-style: none;
+  font-weight: bold;
 }
-nav ul li ul {
+nav li ul {
   position: absolute;
   display: none;  
 }
-nav ul li:hover ul {
+li ul li {
+    font-weight: normal;
+}
+li:hover ul, li.active ul {
   display: block;
 }
+.active > a {
+    color: #333; 
+}
+
+
+
 
 
 
