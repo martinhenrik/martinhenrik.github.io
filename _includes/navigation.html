@@ -1,4 +1,4 @@
-<nav>
+<nav class="right">
     <ul>
         {% for lang in site.languages %}
         <li>
@@ -13,31 +13,31 @@
 </nav>
 
 {% assign levels = page.dir | split: '/' | shift: 2 %}
-<nav role="navigation">
-    <ul>
-        <li{% if levels.size == 0 %} class="active"{% endif %}><a href="/{{ page.lang }}/">{{ site.trans[page.lang].nav.home }}</a>
-            <ul>
-                <li{% if levels.size == 0 %} class="active"{% endif %}><a href="/{{ page.lang }}/">{{ site.trans[page.lang].nav.selected }}</li>
+<nav class="nav" role="navigation">
+    <ul class="toplevel">
+        <li{% if levels.size == 0 %} class="current"{% endif %}><a href="/{{ page.lang }}/">{{ site.trans[page.lang].nav.home }}</a>
+            <ul class="secondlevel">
+                <li{% if levels.size == 0 %} class="current"{% endif %}><a href="/{{ page.lang }}/">{{ site.trans[page.lang].nav.selected }}</a></li>
                 <li><a target="_blank" href="/downloads/cv_henrik_martin2012.doc">{{ site.trans[page.lang].nav.cv }}</a></li>
                 <li><a target="_blank" href="/downloads/henrik_martin_2012.pdf">{{ site.trans[page.lang].nav.portfolio }}</a></li>
             </ul>
         </li>
-        <li{% if levels contains 'works' %} class="active"{% endif %}><a href="/{{ page.lang }}/works/">{{ site.trans[page.lang].nav.works }}</a>
-            <ul>
+        <li{% if levels contains 'works' %} class="current"{% endif %}><a href="/{{ page.lang }}/works/">{{ site.trans[page.lang].nav.works }}</a>
+            <ul class="secondlevel">
                 {% assign prev_year = 0 %}
                 {% assign years = site.works | map: 'year' | sort %}
                 {% for year in years %}
                     {% if prev_year != year %}
-                    <li{% if levels contains year %} class="active"{% endif %}><a href="/{{ page.lang }}/works/{{ year }}/">{{ year }}</a></li>
+                    <li{% if levels contains year %} class="current"{% endif %}><a href="/{{ page.lang }}/works/{{ year }}/">{{ year }}</a></li>
                     {% assign prev_year = year %}
                     {% endif %}
                 {% endfor %}
             </ul>
         </li>
-        <li{% if levels contains 'actual' %} class="active"{% endif %}><a href="/{{ page.lang }}/actual/">{{ site.trans[page.lang].nav.actual }}</a></li>
-        <li{% if levels contains 'cv' %} class="active"{% endif %}><a href="/{{ page.lang }}/cv/">{{ site.trans[page.lang].nav.cv }}</a></li>
-        <li{% if levels contains 'texts' %} class="active"{% endif %}><a href="/{{ page.lang }}/texts/">{{ site.trans[page.lang].nav.texts }}</a></li>
-        <li{% if levels contains 'contact' %} class="active"{% endif %}><a href="/{{ page.lang }}/contact/">{{ site.trans[page.lang].nav.contact }}</a></li>
-        <li{% if levels contains 'links' %} class="active"{% endif %}><a href="/{{ page.lang }}/links/">{{ site.trans[page.lang].nav.links }}</a></li>
+        <li{% if levels contains 'actual' %} class="current"{% endif %}><a href="/{{ page.lang }}/actual/">{{ site.trans[page.lang].nav.actual }}</a></li>
+        <li{% if levels contains 'cv' %} class="current"{% endif %}><a href="/{{ page.lang }}/cv/">{{ site.trans[page.lang].nav.cv }}</a></li>
+        <li{% if levels contains 'texts' %} class="current"{% endif %}><a href="/{{ page.lang }}/texts/">{{ site.trans[page.lang].nav.texts }}</a></li>
+        <li{% if levels contains 'contact' %} class="current"{% endif %}><a href="/{{ page.lang }}/contact/">{{ site.trans[page.lang].nav.contact }}</a></li>
+        <li{% if levels contains 'links' %} class="current"{% endif %}><a href="/{{ page.lang }}/links/">{{ site.trans[page.lang].nav.links }}</a></li>
     </ul>
 </nav>

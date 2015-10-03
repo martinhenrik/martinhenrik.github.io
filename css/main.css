@@ -319,27 +319,63 @@ a {
 a:hover {
   color: #333;,
 }
+
+
+
+.nav {
+    position: relative;
+    min-height: 40px;
+}
+.nav > ul {       
+    width: 180px;
+    padding: 5px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff url(/img/icon-menu.png) no-repeat 10px 9px;
+}
 nav li {
-  display: inline;
-  list-style: none;
-  font-weight: bold;
+    list-style: none;
+    display: inline-block;
 }
-nav li ul {
-  position: absolute;
-  display: none;  
+.nav li, .nav .secondlevel {
+    display: none;
 }
-li ul li {
+.nav ul li.current {
+    display: block;
+}
+.nav a {
+    color: #999;
+    font-weight: bold;
+    padding: 3px 3px 3px 32px;
+    line-height: 100%;
+}
+.nav .current a {
+    color: #333;
+}
+.nav .secondlevel a {
     font-weight: normal;
 }
-li:hover ul, li.active ul {
-  display: block;
+.nav .secondlevel .current a {
+    font-weight: bold;
 }
-.active > a {
-    color: #333; 
+nav.right ul {
+    text-align: right;
 }
 
-
-
+.nav .toplevel:hover {
+    background-image: none;
+}
+.nav .toplevel:hover li, .nav .toplevel:hover .secondlevel {
+    display: block;
+    margin: 0 0 5px;
+}
+.nav .toplevel:hover .current {
+    background: url(/favicon.ico) no-repeat 10px 3px;
+}
+.nav .toplevel:hover .secondlevel .current {
+    background: none;
+}
 
 
 
