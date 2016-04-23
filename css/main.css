@@ -3,6 +3,7 @@ body {
 }
 .navbar-default {
     background-color: transparent;
+    border-radius: 0;
 }
 .navbar-default .navbar-nav>li>a, .navbar-brand span {
     font-weight: bold;
@@ -99,4 +100,10 @@ body {
 }
 .ekko-lightbox-nav-overlay a:hover {
     color: #eeeeee;
+}
+hr {
+    margin-bottom: 7px;
+}
+footer {
+    font-size: 0.8em;
 }
