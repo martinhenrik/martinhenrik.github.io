@@ -8,13 +8,19 @@
 
     {{ page.content[page.lang] }}
 
-    {% for image in item.images %}
-    <div class="image">
-        <a href="{{ image.view }}" title="{{ image.caption[page.lang] }}" data-lightbox="image">
-            <img src="{{ image.thumb }}" alt="{{ image.title[page.lang] }}">
-        </a>
-        <span class="image-caption">{{ image.title[page.lang] }}</span>
+    <div class="row">
+        {% for image in item.images %}
+        <div class="col-sm-4">
+            <a href="{{ image.view }}"
+               title="{{ image.caption[page.lang] }}"
+               data-toggle="lightbox"
+               data-gallery="image"
+               data-title="{{ image.caption[page.lang] }}">
+                <img src="{{ image.thumb }}" alt="{{ image.title[page.lang] }}">
+            </a>
+            <span class="image-caption">{{ image.title[page.lang] }}</span>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </article>
 {% endfor %}
